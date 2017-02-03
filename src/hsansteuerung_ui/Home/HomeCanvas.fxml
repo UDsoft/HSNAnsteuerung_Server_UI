@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import eu.hansolo.medusa.FGauge?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="Home_page" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="hsansteuerung_ui.Home.HomeCanvasController">
+    <stylesheets>
+        <URL value="@homecanvas.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="info_btn" layoutX="671.0" layoutY="5.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="124.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../hsnansteuerung_Model/information.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <VBox layoutX="175.0" layoutY="62.0" prefHeight="524.0" prefWidth="450.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="62.0">
+         <children>
+            <HBox prefHeight="195.0" prefWidth="710.0">
+               <children>
+                  <FGauge fx:id="gauge1Voltage" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="197.0" />
+                  <Separator prefHeight="9.0" prefWidth="110.0" visible="false" />
+                  <FGauge fx:id="gauge1Amp" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="196.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="195.0" prefWidth="710.0">
+               <children>
+                  <FGauge fx:id="gauge2Voltage" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="197.0" />
+                  <Separator prefHeight="0.0" prefWidth="110.0" visible="false" />
+                  <FGauge fx:id="gauge2Amp" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="196.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="195.0" prefWidth="710.0">
+               <children>
+                  <FGauge fx:id="gauge3Voltage" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="197.0" />
+                  <Separator prefHeight="0.0" prefWidth="110.0" visible="false" />
+                  <FGauge fx:id="gauge3Amp" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="196.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="250.0" layoutY="18.0" text="HSNAnsteuerung" textFill="#1505bf" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="18.0">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="152.0" text="Label" />
+   </children>
+</AnchorPane>
