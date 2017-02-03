@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import eu.hansolo.medusa.FGauge?>
+<?import eu.hansolo.medusa.Gauge?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
@@ -12,12 +14,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="Home_page" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="hsansteuerung_ui.Home.HomeCanvasController">
+<AnchorPane id="AnchorPane" fx:id="Home_page" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hsansteuerung_ui.Home.HomeCanvasController">
     <stylesheets>
         <URL value="@homecanvas.css" />
     </stylesheets>
    <children>
-      <Button fx:id="info_btn" layoutX="671.0" layoutY="5.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="124.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <Button fx:id="info_btn" layoutX="671.0" layoutY="5.0" mnemonicParsing="false" onAction="#openDetailView" prefHeight="52.0" prefWidth="105.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <graphic>
             <ImageView fitHeight="35.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -26,27 +28,27 @@
             </ImageView>
          </graphic>
       </Button>
-      <VBox layoutX="175.0" layoutY="62.0" prefHeight="524.0" prefWidth="450.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="175.0" AnchorPane.topAnchor="62.0">
+      <VBox layoutX="60.0" layoutY="62.0" prefHeight="524.0" prefWidth="667.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="73.0" AnchorPane.topAnchor="62.0">
          <children>
-            <HBox prefHeight="195.0" prefWidth="710.0">
+            <HBox prefHeight="202.0" prefWidth="506.0">
                <children>
-                  <FGauge fx:id="gauge1Voltage" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="197.0" />
+                  <Gauge fx:id="gauge1Voltage" alert="true" alertMessage="V Max!" knobType="PLAIN" lcdCrystalEnabled="true" lcdDesign="GREEN_DARKGREEN" lcdFont="LCD" ledOn="true" ledType="FLAT" ledVisible="true" minorTickMarkType="DOT" needleBehavior="OPTIMIZED" needleSize="THIN" needleType="AVIONIC" prefHeight="202.0" prefWidth="320.0" skinType="LCD" subTitle="X-Wert" threshold="10.0" tickLabelsVisible="false" title="hello" unit="V" value="19.0" />
                   <Separator prefHeight="9.0" prefWidth="110.0" visible="false" />
-                  <FGauge fx:id="gauge1Amp" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="196.0" />
+                  <Gauge fx:id="gauge1Amp" alert="true" alertMessage="Amp Max!" lcdCrystalEnabled="true" lcdDesign="GREEN_DARKGREEN" lcdFont="LCD" prefHeight="202.0" prefWidth="320.0" skinType="LCD" subTitle="X-Wert" threshold="20.0" unit="A" />
                </children>
             </HBox>
-            <HBox prefHeight="195.0" prefWidth="710.0">
+            <HBox prefHeight="202.0" prefWidth="506.0">
                <children>
-                  <FGauge fx:id="gauge2Voltage" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="197.0" />
-                  <Separator prefHeight="0.0" prefWidth="110.0" visible="false" />
-                  <FGauge fx:id="gauge2Amp" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="196.0" />
+                  <Gauge fx:id="gauge2Voltage" alert="true" alertMessage="V Max!" lcdCrystalEnabled="true" lcdDesign="GREEN_DARKGREEN" lcdFont="LCD" prefHeight="202.0" prefWidth="320.0" skinType="LCD" subTitle="Y-Wert" threshold="10.0" unit="V" />
+                  <Separator prefHeight="9.0" prefWidth="110.0" visible="false" />
+                  <Gauge fx:id="gauge2Amp" alert="true" alertMessage="Amp Max!" lcdCrystalEnabled="true" lcdDesign="GREEN_DARKGREEN" lcdFont="LCD" prefHeight="202.0" prefWidth="320.0" skinType="LCD" subTitle="Y-Wert" threshold="20.0" unit="A" />
                </children>
             </HBox>
-            <HBox prefHeight="195.0" prefWidth="710.0">
+            <HBox prefHeight="202.0" prefWidth="506.0">
                <children>
-                  <FGauge fx:id="gauge3Voltage" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="197.0" />
-                  <Separator prefHeight="0.0" prefWidth="110.0" visible="false" />
-                  <FGauge fx:id="gauge3Amp" gaugeDesign="ENZO" prefHeight="195.0" prefWidth="196.0" />
+                  <Gauge fx:id="gauge3Voltage" alert="true" alertMessage="V Max!" lcdCrystalEnabled="true" lcdDesign="GREEN_DARKGREEN" lcdFont="LCD" prefHeight="202.0" prefWidth="320.0" skinType="LCD" subTitle="Z-Wert" threshold="10.0" unit="V" />
+                  <Separator prefHeight="9.0" prefWidth="110.0" visible="false" />
+                  <Gauge fx:id="gauge3Amp" alert="true" alertMessage="Amp Max!" lcdCrystalEnabled="true" lcdDesign="GREEN_DARKGREEN" lcdFont="LCD" prefHeight="202.0" prefWidth="320.0" skinType="LCD" subTitle="Z-Wert" threshold="20.0" unit="A" />
                </children>
             </HBox>
          </children>
@@ -56,6 +58,7 @@
             <Font name="System Bold" size="31.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="152.0" text="Label" />
+      <ButtonBar layoutX="-62.0" layoutY="31.0" prefHeight="40.0" prefWidth="200.0" />
+      <CheckBox fx:id="connection_status" layoutX="21.0" layoutY="24.0" mnemonicParsing="false" text="Broker Status" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="24.0" />
    </children>
 </AnchorPane>
